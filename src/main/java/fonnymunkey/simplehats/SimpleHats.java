@@ -56,21 +56,21 @@ public class SimpleHats implements ModInitializer {
                 .icon(() -> new ItemStack(ModRegistry.HATICON))
                 .displayName(Text.translatable("itemGroup.simplehats.hat_group"))
                 .entries((context, entries) -> {
-                    entries.add(ModRegistry.HATBAG_COMMON);
-                    entries.add(ModRegistry.HATBAG_UNCOMMON);
+//                    entries.add(ModRegistry.HATBAG_COMMON);
+//                    entries.add(ModRegistry.HATBAG_UNCOMMON);
                     entries.add(ModRegistry.HATBAG_RARE);
-                    entries.add(ModRegistry.HATBAG_EPIC);
-                    entries.add(ModRegistry.HATBAG_EASTER);
-                    entries.add(ModRegistry.HATBAG_SUMMER);
-                    entries.add(ModRegistry.HATBAG_HALLOWEEN);
-                    entries.add(ModRegistry.HATBAG_FESTIVE);
-                    entries.add(ModRegistry.HATSCRAPS_COMMON);
-                    entries.add(ModRegistry.HATSCRAPS_UNCOMMON);
+//                    entries.add(ModRegistry.HATBAG_EPIC);
+//                    entries.add(ModRegistry.HATBAG_EASTER);
+//                    entries.add(ModRegistry.HATBAG_SUMMER);
+//                    entries.add(ModRegistry.HATBAG_HALLOWEEN);
+//                    entries.add(ModRegistry.HATBAG_FESTIVE);
+//                    entries.add(ModRegistry.HATSCRAPS_COMMON);
+//                    entries.add(ModRegistry.HATSCRAPS_UNCOMMON);
                     entries.add(ModRegistry.HATSCRAPS_RARE);
-                    entries.add(ModRegistry.HATSCRAPS_EASTER);
-                    entries.add(ModRegistry.HATSCRAPS_SUMMER);
-                    entries.add(ModRegistry.HATSCRAPS_HALLOWEEN);
-                    entries.add(ModRegistry.HATSCRAPS_FESTIVE);
+//                    entries.add(ModRegistry.HATSCRAPS_EASTER);
+//                    entries.add(ModRegistry.HATSCRAPS_SUMMER);
+//                    entries.add(ModRegistry.HATSCRAPS_HALLOWEEN);
+//                    entries.add(ModRegistry.HATSCRAPS_FESTIVE);
                     entries.add(ModRegistry.HATICON);
                     entries.add(ModRegistry.HATDISPLAYITEM);
 

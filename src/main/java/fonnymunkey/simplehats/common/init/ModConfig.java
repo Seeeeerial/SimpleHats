@@ -28,10 +28,10 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         public int seasonalBagChance = 20;
 
         @ConfigEntry.Gui.Tooltip
-        public boolean enableMobLoot = true;
+        public boolean enableMobLoot = false;
 
         @ConfigEntry.Gui.Tooltip
-        public boolean enableChestLoot = true;
+        public boolean enableChestLoot = false;
 
         @ConfigEntry.Gui.Tooltip
         public boolean allowHatInHelmetSlot = false;
