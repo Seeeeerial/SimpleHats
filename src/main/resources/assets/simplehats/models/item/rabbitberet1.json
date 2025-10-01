@@ -2,8 +2,8 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"2": "simplehats:item/hats/cloth1_brown",
-		"particle": "simplehats:item/hats/cloth1_brown"
+		"2": "simplehats:item/hats/clothR_brown",
+		"particle": "simplehats:item/hats/clothR_brown"
 	},
 	"elements": [
 		{
@@ -99,8 +99,8 @@
 		},
 		{
 			"from": [2.94454, 4.05039, 3.60433],
-			"to": [5.94454, 8.05039, 4.60433],
-			"rotation": {"angle": -22.5, "axis": "x", "origin": [4.44454, 6.30039, 3.77933]},
+			"to": [5.94454, 11.05039, 4.60433],
+			"rotation": {"angle": -5, "axis": "x", "origin": [4.44454, 6.30039, 3.77933]},
 			"faces": {
 				"north": {"uv": [6.06, 5.06, 8.94, 8.94], "texture": "#2", "tintindex": 0},
 				"east": {"uv": [6.06, 5.06, 6.94, 8.94], "texture": "#2", "tintindex": 0},
@@ -112,8 +112,8 @@
 		},
 		{
 			"from": [3.94454, 6.05039, 3.55433],
-			"to": [4.94454, 7.05039, 3.55433],
-			"rotation": {"angle": -22.5, "axis": "x", "origin": [4.44454, 6.30039, 3.77933]},
+			"to": [4.94454, 10.05039, 3.55433],
+			"rotation": {"angle": -5, "axis": "x", "origin": [4.44454, 6.30039, 3.77933]},
 			"faces": {
 				"north": {"uv": [12.06, 1.06, 12.94, 1.94], "texture": "#2", "tintindex": 0},
 				"east": {"uv": [12.06, 0.06, 12.94, 0.94], "texture": "#2", "tintindex": 0},
@@ -125,8 +125,8 @@
 		},
 		{
 			"from": [10.80546, 6.06942, 3.65],
-			"to": [11.80546, 7.06942, 3.65],
-			"rotation": {"angle": -22.5, "axis": "x", "origin": [7.875, 6.06942, 3.875]},
+			"to": [11.80546, 10.06942, 3.65],
+			"rotation": {"angle": -5, "axis": "x", "origin": [7.875, 6.06942, 3.875]},
 			"faces": {
 				"north": {"uv": [12.94, 1.06, 12.06, 1.94], "texture": "#2", "tintindex": 0},
 				"east": {"uv": [12.94, 0.06, 12.06, 0.94], "texture": "#2", "tintindex": 0},
@@ -138,8 +138,8 @@
 		},
 		{
 			"from": [9.80546, 4.06942, 3.7],
-			"to": [12.80546, 8.06942, 4.7],
-			"rotation": {"angle": -22.5, "axis": "x", "origin": [7.875, 6.06942, 3.875]},
+			"to": [12.80546, 11.06942, 4.7],
+			"rotation": {"angle": -5, "axis": "x", "origin": [7.875, 6.06942, 3.875]},
 			"faces": {
 				"north": {"uv": [8.94, 5.06, 6.06, 8.94], "texture": "#2", "tintindex": 0},
 				"east": {"uv": [6.94, 5.06, 6.06, 8.94], "texture": "#2", "tintindex": 0},
