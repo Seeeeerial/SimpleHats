@@ -1,0 +1,111 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Pologony Creation Co.,Ltd.",
+	"texture_size": [24, 24],
+	"textures": {
+		"1": "simplehats:item/tails/wolf_tail"
+	},
+	"elements": [
+		{
+			"from": [6.25, 3.0726, 2.05201],
+			"to": [10.25, 7.0726, 9.05201],
+			"rotation": {"angle": 45, "axis": "x", "origin": [8, 5.06361, 7.62839]},
+			"faces": {
+				"north": {"uv": [0, 6.66667, 2.33333, 9], "texture": "#1", "tintindex": 0},
+				"east": {"uv": [4.33333, 3.33333, 0, 5.66667], "texture": "#1", "tintindex": 0},
+				"south": {"uv": [8.66667, 0, 11, 2.33333], "texture": "#1", "tintindex": 0},
+				"west": {"uv": [0, 3.33333, 4.33333, 5.66667], "texture": "#1", "tintindex": 0},
+				"up": {"uv": [7.66667, 4.33333, 5.33333, 0], "texture": "#1", "tintindex": 0},
+				"down": {"uv": [7.66667, 0, 5.33333, 4.33333], "texture": "#1", "tintindex": 0}
+			}
+		},
+		{
+			"from": [6.75, 3.5726, 1.05201],
+			"to": [9.75, 6.5726, 3.05201],
+			"rotation": {"angle": 45, "axis": "x", "origin": [8, 5.06361, 7.62839]},
+			"faces": {
+				"north": {"uv": [0, 6.66667, 1.66667, 8.33334], "texture": "#1", "tintindex": 0},
+				"east": {"uv": [1, 6.66666, 0, 8.33333], "texture": "#1", "tintindex": 0},
+				"south": {"uv": [0, 6.66667, 1.66667, 8.33333], "texture": "#1", "tintindex": 0},
+				"west": {"uv": [0, 6.66666, 1, 8.33333], "texture": "#1", "tintindex": 0},
+				"up": {"uv": [1, 8.33333, 0, 6.66667], "rotation": 90, "texture": "#1", "tintindex": 0},
+				"down": {"uv": [0, 8.33333, 1, 6.66667], "rotation": 90, "texture": "#1", "tintindex": 0}
+			}
+		},
+		{
+			"from": [6.75, 0.91413, 6.5832],
+			"to": [9.75, 5.66413, 9.5832],
+			"rotation": {"angle": -45, "axis": "x", "origin": [8, 4.66253, 8.1822]},
+			"faces": {
+				"north": {"uv": [10.33333, 8.66667, 8.66667, 11.33333], "rotation": 180, "texture": "#1", "tintindex": 0},
+				"east": {"uv": [11.33333, 6, 8.66667, 7.66667], "rotation": 270, "texture": "#1", "tintindex": 0},
+				"south": {"uv": [10.33333, 11.33333, 8.66667, 8.66667], "texture": "#1", "tintindex": 0},
+				"west": {"uv": [8.66667, 6, 11.33333, 7.66667], "rotation": 90, "texture": "#1", "tintindex": 0},
+				"up": {"uv": [2.66667, 10, 4.33333, 11.66667], "rotation": 180, "texture": "#1", "tintindex": 0},
+				"down": {"uv": [5.33333, 10.66667, 7, 12.33333], "texture": "#1", "tintindex": 0}
+			}
+		},
+		{
+			"name": "cube inverted",
+			"from": [9.75, 5.66413, 9.5832],
+			"to": [6.75, 0.91413, 6.5832],
+			"rotation": {"angle": -45, "axis": "x", "origin": [8, 4.66253, 8.1822]},
+			"faces": {
+				"north": {"uv": [10.33333, 8.66667, 8.66667, 11.33333], "texture": "#1", "tintindex": 0},
+				"east": {"uv": [11.33333, 6, 8.66667, 7.66667], "rotation": 90, "texture": "#1", "tintindex": 0},
+				"south": {"uv": [10.33333, 11.33333, 8.66667, 8.66667], "rotation": 180, "texture": "#1", "tintindex": 0},
+				"west": {"uv": [8.66667, 6, 11.33333, 7.66667], "rotation": 270, "texture": "#1", "tintindex": 0},
+				"up": {"uv": [7, 10.66667, 5.33333, 12.33333], "texture": "#1", "tintindex": 0},
+				"down": {"uv": [4.33333, 10, 2.66667, 11.66667], "rotation": 180, "texture": "#1", "tintindex": 0}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [50, -87, 0],
+			"translation": [0, 1.25, 0.25],
+			"scale": [0.7, 0.7, 0.7]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [64.75, 0, 0],
+			"translation": [-5.5, -11.25, 3.25]
+		},
+		"firstperson_righthand": {
+			"rotation": [34, -180, 64],
+			"translation": [-0.5, 4.75, 3.25],
+			"scale": [0.7, 0.7, 0.7]
+		},
+		"firstperson_lefthand": {
+			"translation": [0, 6.75, 2.75],
+			"scale": [0, 0, 0]
+		},
+		"ground": {
+			"translation": [0, 5, 0],
+			"scale": [1.5, 1.5, 1.5]
+		},
+		"gui": {
+			"rotation": [0.65, 79.71, 143.61],
+			"translation": [1.5, -2, 0],
+			"scale": [1.5, 1.5, 1.5]
+		},
+		"head": {
+			"translation": [0, -22.25, 9.25],
+			"scale": [1.6, 1.6, 1.6]
+		},
+		"fixed": {
+			"rotation": [0, -180, 0],
+			"translation": [0, -0.25, -18.25],
+			"scale": [3, 3, 3]
+		}
+	},
+	"groups": [
+		{
+			"name": "wolf_tail",
+			"origin": [8, 4.66253, 8.1822],
+			"color": 0,
+			"children": [0, 1, 2, 3]
+		}
+	],
+	"mcmodels": "10e304a25a5b0b4a31b111ba3c8e1f6c"
+}

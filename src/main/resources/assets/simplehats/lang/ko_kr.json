@@ -51,6 +51,12 @@
   "item.simplehats.mushberet1": "빨간 버섯 모자",
   "item.simplehats.mushberet2": "까만 버섯 모자",
   "item.simplehats.blankhat": "투명 모자",
+  "item.simplehats.bearears": "곰 귀",
+  "item.simplehats.catears": "고양이 귀",
+  "item.simplehats.rabbit_ear": "토끼 귀",
+  "item.simplehats.tiger_ears": "호랑이 귀",
+  "item.simplehats.wolf_ear": "늑대 귀",
+  "item.simplehats.angel_ring": "천사링",
   "item.simplehats.pinkhat": "캡모자",
 
   "text.autoconfig.simplehats.title": "SimpleHats Config",

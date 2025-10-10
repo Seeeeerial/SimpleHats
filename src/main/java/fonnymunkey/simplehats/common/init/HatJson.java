@@ -44,7 +44,6 @@ public class HatJson {
             new HatEntry("winghat", Rarity.RARE, 5, 0, new HatEntry.HatParticleSettings(true, "minecraft:cloud", 0.03F, HatEntry.HatParticleSettings.HatParticleMovement.TRAILING_HEAD)),
             new HatEntry("zigzagwitchhat", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998), new HatEntry.HatParticleSettings(true, "minecraft:witch", 0.04F, HatEntry.HatParticleSettings.HatParticleMovement.TRAILING_FULL)),
             new HatEntry("smallroundmimi", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
-            new HatEntry("pointedmimi", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
             new HatEntry("bluebellhat", Rarity.RARE, 5, 0),
             new HatEntry("fallenleaf", Rarity.RARE, 5, 0),
             new HatEntry("kirby1", Rarity.RARE, 5, 0),
@@ -73,6 +72,12 @@ public class HatJson {
             new HatEntry("mushberet1", Rarity.RARE, 5, 0),
             new HatEntry("mushberet2", Rarity.RARE, 5, 0),
             new HatEntry("blankhat", Rarity.RARE, 5, 0),
+            new HatEntry("bearears", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
+            new HatEntry("catears", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
+            new HatEntry("rabbit_ear", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
+            new HatEntry("tiger_ears", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
+            new HatEntry("wolf_ear", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
+            new HatEntry("angel_ring", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16777160)),
             new HatEntry("pinkhat", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998))
 
 //            new HatEntry("bandana", Rarity.UNCOMMON, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
