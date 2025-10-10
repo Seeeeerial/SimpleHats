@@ -4,7 +4,9 @@ import fonnymunkey.simplehats.common.entity.HatDisplay;
 import fonnymunkey.simplehats.common.init.HatJson;
 import fonnymunkey.simplehats.common.init.ModConfig;
 import fonnymunkey.simplehats.common.init.ModRegistry;
+import fonnymunkey.simplehats.common.init.TailJson;
 import fonnymunkey.simplehats.common.item.HatItem;
+import fonnymunkey.simplehats.common.item.TailItem;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
@@ -38,11 +40,13 @@ public class SimpleHats implements ModInitializer {
     public static RegistryKey<ItemGroup> HAT_TAB = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(modId, "hat_group"));
 
     public static final TagKey<Item> ALL_HATS = TagKey.of(RegistryKeys.ITEM, new Identifier(modId, "all_hats"));
+    public static final TagKey<Item> ALL_TAILS = TagKey.of(RegistryKeys.ITEM, new Identifier(modId, "all_tails"));
 
     @Override
     public void onInitialize() {
         config = AutoConfig.register(ModConfig.class, PartitioningSerializer.wrap(Toml4jConfigSerializer::new)).getConfig();
         HatJson.registerHatJson();
+        TailJson.registerTailJson();
 
         /*
         if(SimpleHats.config.common.allowUpdates) {
@@ -51,6 +55,7 @@ public class SimpleHats implements ModInitializer {
         */
 
         ModRegistry.registerHats();
+        ModRegistry.registerTails();
 
         Registry.register(Registries.ITEM_GROUP, HAT_TAB, FabricItemGroup.builder()
                 .icon(() -> new ItemStack(ModRegistry.HATICON))
@@ -76,6 +81,9 @@ public class SimpleHats implements ModInitializer {
 
                     for(HatItem hat : ModRegistry.hatList) {
                         entries.add(hat);
+                    }
+                    for(TailItem tail : ModRegistry.tailList) {
+                        entries.add(tail);
                     }
                 })
                 .build());
@@ -103,7 +111,6 @@ public class SimpleHats implements ModInitializer {
                 content.add(hat);
             }
         });
-
  */
 
         FabricDefaultAttributeRegistry.register(ModRegistry.HATDISPLAYENTITY, HatDisplay.createLivingAttributes());

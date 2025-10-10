@@ -59,6 +59,14 @@
   "item.simplehats.angel_ring": "천사링",
   "item.simplehats.pinkhat": "캡모자",
 
+  "item.simplehats.wolf_tail": "늑대 꼬리",
+  "item.simplehats.fox_tail": "여우 꼬리",
+  "item.simplehats.rabbit_tail": "토끼 꼬리",
+  "item.simplehats.bear_tail": "곰 꼬리",
+  "item.simplehats.tiger_tail": "호랑이 꼬리",
+  "item.simplehats.cat_tail": "고양이 꼬리",
+  "item.simplehats.raccoon_tail": "너구리 꼬리",
+
   "text.autoconfig.simplehats.title": "SimpleHats Config",
   "text.autoconfig.simplehats.category.common": "Common",
   "text.autoconfig.simplehats.category.client": "Client",

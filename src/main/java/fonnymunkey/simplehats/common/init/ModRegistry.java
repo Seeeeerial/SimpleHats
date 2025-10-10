@@ -2,15 +2,14 @@ package fonnymunkey.simplehats.common.init;
 
 import fonnymunkey.simplehats.SimpleHats;
 import fonnymunkey.simplehats.common.entity.HatDisplay;
-import fonnymunkey.simplehats.common.item.BagItem;
-import fonnymunkey.simplehats.common.item.HatDisplayItem;
-import fonnymunkey.simplehats.common.item.HatItem;
-import fonnymunkey.simplehats.common.item.HatItemDyeable;
+import fonnymunkey.simplehats.common.item.*;
 import fonnymunkey.simplehats.common.recipe.HatScrapRecipe;
 import fonnymunkey.simplehats.common.recipe.HatVariantRecipe;
+import fonnymunkey.simplehats.common.recipe.TailScrapRecipe;
 import fonnymunkey.simplehats.util.HatEntry;
 import fonnymunkey.simplehats.util.HatEntry.HatSeason;
 import fonnymunkey.simplehats.util.TagInjector;
+import fonnymunkey.simplehats.util.TailEntry;
 import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -31,6 +30,7 @@ import java.util.List;
 public class ModRegistry {
 
     public static List<HatItem> hatList = new ArrayList<HatItem>();
+    public static List<TailItem> tailList = new ArrayList<TailItem>();
 
     ////
     //Items
@@ -67,6 +67,19 @@ public class ModRegistry {
         TagInjector.inject(Registries.ITEM, SimpleHats.ALL_HATS.id(), ModRegistry.hatList.stream().map(hatItem -> (Item) hatItem).toList());
     }
 
+    public static void registerTails() {
+        for(TailEntry entry : TailJson.getTailList()) {
+            TailItem tail = entry.getTailDyeSettings().getUseDye() ? new TailItemDyeable(entry) : new TailItem(entry);
+            tail = Registry.register(Registries.ITEM, new Identifier(SimpleHats.modId, entry.getTailName()), tail);
+            ModRegistry.tailList.add(tail);
+
+            if(tail instanceof TailItemDyeable) CauldronBehavior.WATER_CAULDRON_BEHAVIOR.map().put((TailItemDyeable)tail, CauldronBehavior.CLEAN_DYEABLE_ITEM);
+        }
+        SimpleHats.logger.log(Level.INFO, "Generated " + ModRegistry.tailList.size() + " tail items from tail entries.");
+
+        TagInjector.inject(Registries.ITEM, SimpleHats.ALL_TAILS.id(), ModRegistry.tailList.stream().map(tailItem -> (Item) tailItem).toList());
+    }
+
     ////
     //Entity Registry
     ////
@@ -75,6 +88,12 @@ public class ModRegistry {
     //Recipe Registry
     ////
     public static final RecipeSerializer<?> HATSCRAP_SERIALIZER = Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(SimpleHats.modId, "custom_hatscraps"), new SpecialRecipeSerializer<>(HatScrapRecipe::new));
+    public static final RecipeSerializer<?> TAILSCRAP_SERIALIZER =
+            Registry.register(
+                    Registries.RECIPE_SERIALIZER,
+                    new Identifier(SimpleHats.modId, "custom_tailscraps"),
+                    new SpecialRecipeSerializer<>(TailScrapRecipe::new)
+            );
     public static final RecipeSerializer<?> HATVARIANTS_SERIALIZER = Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(SimpleHats.modId, "custom_hatvariants"), new SpecialRecipeSerializer<>(HatVariantRecipe::new));
 
     ////

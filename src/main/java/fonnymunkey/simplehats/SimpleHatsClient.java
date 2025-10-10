@@ -5,8 +5,10 @@ import dev.emi.trinkets.api.client.TrinketRendererRegistry;
 import fonnymunkey.simplehats.client.hat.HatLayer;
 import fonnymunkey.simplehats.client.hatdisplay.HatDisplayModel;
 import fonnymunkey.simplehats.client.hatdisplay.HatDisplayRenderer;
+import fonnymunkey.simplehats.client.tail.TailLayer;
 import fonnymunkey.simplehats.common.init.ModRegistry;
 import fonnymunkey.simplehats.common.item.HatItemDyeable;
+import fonnymunkey.simplehats.common.item.TailItemDyeable;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -30,6 +32,14 @@ public class SimpleHatsClient implements ClientModInitializer {
                 TrinketRendererRegistry.registerRenderer(hat, renderer);
             }
         }
+        for(Item tail : ModRegistry.tailList) {
+            if(tail instanceof TailItemDyeable tailDye) {
+                ColorProviderRegistry.ITEM.register((stack, color) -> ((TailItemDyeable)stack.getItem()).getColor(stack), tailDye);
+            }
+            if(tail instanceof TrinketRenderer renderer) {
+                TrinketRendererRegistry.registerRenderer(tail, renderer);
+            }
+        }
         TrinketRendererRegistry.registerRenderer((Item)ModRegistry.HATSPECIAL, (TrinketRenderer)ModRegistry.HATSPECIAL);
 
         /*
@@ -44,6 +54,7 @@ public class SimpleHatsClient implements ClientModInitializer {
         LivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper, context) -> {
             if(entityRenderer instanceof PlayerEntityRenderer playerEntityRenderer) {
                 registrationHelper.register(new HatLayer<>(playerEntityRenderer));
+                registrationHelper.register(new TailLayer<>(playerEntityRenderer));
             }
         });
     }
