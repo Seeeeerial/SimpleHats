@@ -1,0 +1,75 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made by pedravila",
+	"texture_size": [64, 64],
+	"textures": {
+		"2": "simplehats:item/chest/small_angel_wing",
+		"particle": "simplehats:item/chest/small_angel_wing"
+	},
+	"elements": [
+		{
+			"from": [7, -6, 1],
+			"to": [7, 10, 19],
+			"rotation": {"angle": -45, "axis": "y", "origin": [7, 4.5, -0.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 8.5], "texture": "#2", "tintindex": 0},
+				"east": {"uv": [16, 0, 8, 8.5], "texture": "#2", "tintindex": 0},
+				"south": {"uv": [0, 0, 0, 8.5], "texture": "#2", "tintindex": 0},
+				"west": {"uv": [8, 0, 16, 8.5], "texture": "#2", "tintindex": 0},
+				"up": {"uv": [0, 8, 0, 0], "texture": "#2", "tintindex": 0},
+				"down": {"uv": [0, 0, 0, 8], "texture": "#2", "tintindex": 0}
+			}
+		},
+		{
+			"from": [9, -6, 1],
+			"to": [9, 10, 19],
+			"rotation": {"angle": 45, "axis": "y", "origin": [9, 4.5, -0.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 8.5], "texture": "#2", "tintindex": 0},
+				"east": {"uv": [16, 0, 8, 8.5], "texture": "#2", "tintindex": 0},
+				"south": {"uv": [0, 0, 0, 8.5], "texture": "#2", "tintindex": 0},
+				"west": {"uv": [8, 0, 16, 8.5], "texture": "#2", "tintindex": 0},
+				"up": {"uv": [0, 8, 0, 0], "texture": "#2", "tintindex": 0},
+				"down": {"uv": [0, 0, 0, 8], "texture": "#2", "tintindex": 0}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -135, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [-158.08, -18.76, 165.13],
+			"translation": [-1.25, 5.25, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"head": {
+			"rotation": [2.25, 0, 0],
+			"translation": [0, -40, 15.5],
+			"scale": [1.6, 1.6, 1.6]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"mcmodels": "24e2f8d51cbe79b0b5716672c7773e90"
+}

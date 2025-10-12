@@ -73,6 +73,9 @@
   "item.simplehats.ravager": "파괴수 뿔",
   "item.simplehats.talltrio": "마왕 뿔",
   "item.simplehats.tiefling": "티플링 뿔",
+  "item.simplehats.fallen_angel_halo": "타천사의 헤일로",
+  "item.simplehats.fire_hat": "불의 마법사 모자",
+  "item.simplehats.wind_hat": "바람의 마법사 모자",
   "item.simplehats.pinkhat": "캡모자",
 
   "item.simplehats.wolf_tail": "늑대 꼬리",
@@ -82,6 +85,18 @@
   "item.simplehats.tiger_tail": "호랑이 꼬리",
   "item.simplehats.cat_tail": "고양이 꼬리",
   "item.simplehats.raccoon_tail": "너구리 꼬리",
+  "item.simplehats.blank_pants": "투명 하의",
+
+  "item.simplehats.blank_top": "투명 상의",
+  "item.simplehats.fallen_angel_wings": "타천사의 날개",
+  "item.simplehats.small_angel_wing": "작은 천사의 날개",
+  "item.simplehats.small_devil_wing": "작은 악마의 날개",
+  "item.simplehats.fire_wings": "불의 날개",
+  "item.simplehats.fire_wings_dyeable": "불의 날개(염색 가능)",
+  "item.simplehats.wind_wings": "바람의 날개",
+  "item.simplehats.wind_wings_dyeable": "바람의 날개(염색 가능)",
+
+  "item.simplehats.blank_shoes": "투명 신발",
 
   "text.autoconfig.simplehats.title": "SimpleHats Config",
   "text.autoconfig.simplehats.category.common": "Common",

@@ -3,9 +3,11 @@ package fonnymunkey.simplehats.common.init;
 import fonnymunkey.simplehats.SimpleHats;
 import fonnymunkey.simplehats.common.entity.HatDisplay;
 import fonnymunkey.simplehats.common.item.*;
+import fonnymunkey.simplehats.common.recipe.ChestScrapRecipe;
 import fonnymunkey.simplehats.common.recipe.HatScrapRecipe;
 import fonnymunkey.simplehats.common.recipe.HatVariantRecipe;
 import fonnymunkey.simplehats.common.recipe.TailScrapRecipe;
+import fonnymunkey.simplehats.util.ChestEntry;
 import fonnymunkey.simplehats.util.HatEntry;
 import fonnymunkey.simplehats.util.HatEntry.HatSeason;
 import fonnymunkey.simplehats.util.TagInjector;
@@ -31,6 +33,7 @@ public class ModRegistry {
 
     public static List<HatItem> hatList = new ArrayList<HatItem>();
     public static List<TailItem> tailList = new ArrayList<TailItem>();
+    public static List<ChestItem> chestList = new ArrayList<ChestItem>();
 
     ////
     //Items
@@ -80,6 +83,19 @@ public class ModRegistry {
         TagInjector.inject(Registries.ITEM, SimpleHats.ALL_TAILS.id(), ModRegistry.tailList.stream().map(tailItem -> (Item) tailItem).toList());
     }
 
+    public static void registerCHests() {
+        for(ChestEntry entry : ChestJson.getChestList()) {
+            ChestItem chest = entry.getChestDyeSettings().getUseDye() ? new ChestItemDyeable(entry) : new ChestItem(entry);
+            chest = Registry.register(Registries.ITEM, new Identifier(SimpleHats.modId, entry.getChestName()), chest);
+            ModRegistry.chestList.add(chest);
+
+            if(chest instanceof ChestItemDyeable) CauldronBehavior.WATER_CAULDRON_BEHAVIOR.map().put((ChestItemDyeable)chest, CauldronBehavior.CLEAN_DYEABLE_ITEM);
+        }
+        SimpleHats.logger.log(Level.INFO, "Generated " + ModRegistry.tailList.size() + " tail items from tail entries.");
+
+        TagInjector.inject(Registries.ITEM, SimpleHats.ALL_CHESTS.id(), ModRegistry.chestList.stream().map(chestItem -> (Item) chestItem).toList());
+    }
+
     ////
     //Entity Registry
     ////
@@ -93,6 +109,12 @@ public class ModRegistry {
                     Registries.RECIPE_SERIALIZER,
                     new Identifier(SimpleHats.modId, "custom_tailscraps"),
                     new SpecialRecipeSerializer<>(TailScrapRecipe::new)
+            );
+    public static final RecipeSerializer<?> CHESTSCRAP_SERIALIZER =
+            Registry.register(
+                    Registries.RECIPE_SERIALIZER,
+                    new Identifier(SimpleHats.modId, "custom_chestscraps"),
+                    new SpecialRecipeSerializer<>(ChestScrapRecipe::new)
             );
     public static final RecipeSerializer<?> HATVARIANTS_SERIALIZER = Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(SimpleHats.modId, "custom_hatvariants"), new SpecialRecipeSerializer<>(HatVariantRecipe::new));
 

@@ -1,8 +1,10 @@
 package fonnymunkey.simplehats.mixin.core;
 
 import dev.emi.trinkets.api.TrinketsApi;
+import fonnymunkey.simplehats.common.item.ChestItem;
 import fonnymunkey.simplehats.common.item.HatItem;
 import fonnymunkey.simplehats.common.item.TailItem;
+import fonnymunkey.simplehats.common.item.etcItems.BlankShoes;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.feature.ArmorFeatureRenderer;
 import net.minecraft.client.render.entity.model.BipedEntityModel;
@@ -26,10 +28,25 @@ public class MixinHumanoidArmorLayer {
                 if(hasHatTrinket) ci.cancel();
             });
         }
-        if (entity instanceof PlayerEntity && armorSlot.equals(EquipmentSlot.LEGS)) {
+
+        else if (entity instanceof PlayerEntity && armorSlot.equals(EquipmentSlot.CHEST)) {
+            TrinketsApi.getTrinketComponent(entity).ifPresent(component -> {
+                var hasBeltTrinket = !component.getEquipped(stack -> stack.getItem() instanceof ChestItem).isEmpty();
+                if (hasBeltTrinket) ci.cancel(); // 바지 렌더링 취소
+            });
+        }
+
+        else if (entity instanceof PlayerEntity && armorSlot.equals(EquipmentSlot.LEGS)) {
             TrinketsApi.getTrinketComponent(entity).ifPresent(component -> {
                 var hasBeltTrinket = !component.getEquipped(stack -> stack.getItem() instanceof TailItem).isEmpty();
                 if (hasBeltTrinket) ci.cancel(); // 바지 렌더링 취소
+            });
+        }
+
+        else if (entity instanceof PlayerEntity && armorSlot.equals(EquipmentSlot.FEET)) {
+            TrinketsApi.getTrinketComponent(entity).ifPresent(component -> {
+                var hasShoesTrinket = !component.getEquipped(stack -> stack.getItem() instanceof BlankShoes).isEmpty();
+                if (hasShoesTrinket) ci.cancel(); // 바지 렌더링 취소
             });
         }
     }

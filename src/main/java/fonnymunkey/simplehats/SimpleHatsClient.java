@@ -2,13 +2,16 @@ package fonnymunkey.simplehats;
 
 import dev.emi.trinkets.api.client.TrinketRenderer;
 import dev.emi.trinkets.api.client.TrinketRendererRegistry;
+import fonnymunkey.simplehats.client.chest.ChestLayer;
 import fonnymunkey.simplehats.client.hat.HatLayer;
 import fonnymunkey.simplehats.client.hatdisplay.HatDisplayModel;
 import fonnymunkey.simplehats.client.hatdisplay.HatDisplayRenderer;
 import fonnymunkey.simplehats.client.tail.TailLayer;
 import fonnymunkey.simplehats.common.init.ModRegistry;
+import fonnymunkey.simplehats.common.item.ChestItemDyeable;
 import fonnymunkey.simplehats.common.item.HatItemDyeable;
 import fonnymunkey.simplehats.common.item.TailItemDyeable;
+import fonnymunkey.simplehats.common.item.etcItems.BlankShoesRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -18,6 +21,8 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRendererRegistrationCallback;
 import net.minecraft.client.render.entity.PlayerEntityRenderer;
 import net.minecraft.item.Item;
+
+import static fonnymunkey.simplehats.SimpleHats.BLANK_SHOES;
 
 @Environment(EnvType.CLIENT)
 public class SimpleHatsClient implements ClientModInitializer {
@@ -40,8 +45,16 @@ public class SimpleHatsClient implements ClientModInitializer {
                 TrinketRendererRegistry.registerRenderer(tail, renderer);
             }
         }
+        for(Item chest : ModRegistry.chestList) {
+            if(chest instanceof ChestItemDyeable chestDye) {
+                ColorProviderRegistry.ITEM.register((stack, color) -> ((ChestItemDyeable)stack.getItem()).getColor(stack), chestDye);
+            }
+            if(chest instanceof TrinketRenderer renderer) {
+                TrinketRendererRegistry.registerRenderer(chest, renderer);
+            }
+        }
         TrinketRendererRegistry.registerRenderer((Item)ModRegistry.HATSPECIAL, (TrinketRenderer)ModRegistry.HATSPECIAL);
-
+        TrinketRendererRegistry.registerRenderer(BLANK_SHOES, new BlankShoesRenderer());
         /*
         if(SimpleHats.config.common.allowUpdates) {
             UUIDHandler.checkResourceUpdates();
@@ -55,6 +68,7 @@ public class SimpleHatsClient implements ClientModInitializer {
             if(entityRenderer instanceof PlayerEntityRenderer playerEntityRenderer) {
                 registrationHelper.register(new HatLayer<>(playerEntityRenderer));
                 registrationHelper.register(new TailLayer<>(playerEntityRenderer));
+                registrationHelper.register(new ChestLayer<>(playerEntityRenderer));
             }
         });
     }

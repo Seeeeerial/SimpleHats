@@ -1,12 +1,11 @@
 package fonnymunkey.simplehats;
 
 import fonnymunkey.simplehats.common.entity.HatDisplay;
-import fonnymunkey.simplehats.common.init.HatJson;
-import fonnymunkey.simplehats.common.init.ModConfig;
-import fonnymunkey.simplehats.common.init.ModRegistry;
-import fonnymunkey.simplehats.common.init.TailJson;
+import fonnymunkey.simplehats.common.init.*;
+import fonnymunkey.simplehats.common.item.ChestItem;
 import fonnymunkey.simplehats.common.item.HatItem;
 import fonnymunkey.simplehats.common.item.TailItem;
+import fonnymunkey.simplehats.common.item.etcItems.BlankShoes;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
@@ -41,12 +40,16 @@ public class SimpleHats implements ModInitializer {
 
     public static final TagKey<Item> ALL_HATS = TagKey.of(RegistryKeys.ITEM, new Identifier(modId, "all_hats"));
     public static final TagKey<Item> ALL_TAILS = TagKey.of(RegistryKeys.ITEM, new Identifier(modId, "all_tails"));
+    public static final TagKey<Item> ALL_CHESTS = TagKey.of(RegistryKeys.ITEM, new Identifier(modId, "all_chests"));
+
+    public static final Item BLANK_SHOES = new BlankShoes(new Item.Settings().maxCount(1));
 
     @Override
     public void onInitialize() {
         config = AutoConfig.register(ModConfig.class, PartitioningSerializer.wrap(Toml4jConfigSerializer::new)).getConfig();
         HatJson.registerHatJson();
         TailJson.registerTailJson();
+        ChestJson.registerChestJson();
 
         /*
         if(SimpleHats.config.common.allowUpdates) {
@@ -56,6 +59,9 @@ public class SimpleHats implements ModInitializer {
 
         ModRegistry.registerHats();
         ModRegistry.registerTails();
+        ModRegistry.registerCHests();
+
+        Registry.register(Registries.ITEM, new Identifier(modId, "blank_shoes"), BLANK_SHOES);
 
         Registry.register(Registries.ITEM_GROUP, HAT_TAB, FabricItemGroup.builder()
                 .icon(() -> new ItemStack(ModRegistry.HATICON))
@@ -85,6 +91,10 @@ public class SimpleHats implements ModInitializer {
                     for(TailItem tail : ModRegistry.tailList) {
                         entries.add(tail);
                     }
+                    for(ChestItem chest : ModRegistry.chestList) {
+                        entries.add(chest);
+                    }
+                    entries.add(BLANK_SHOES);
                 })
                 .build());
 /*

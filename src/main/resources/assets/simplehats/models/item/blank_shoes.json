@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "simplehats:item/blank_shoes"
+  },
+  "credit": "Made with Blockbench"
+}

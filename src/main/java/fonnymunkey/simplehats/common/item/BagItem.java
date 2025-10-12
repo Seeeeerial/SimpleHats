@@ -92,6 +92,13 @@ public class BagItem extends Item {
                     availableLootList.add(tail);
                 }
             }
+            // ChestItems
+            for (ChestItem chest : ModRegistry.chestList) {
+                if (chest.getChestEntry().getChestRarity() == this.rarity &&
+                        chest.getChestEntry().getChestWeight() != 0) {
+                    availableLootList.add(chest);
+                }
+            }
 
             if (availableLootList.size() == 0) {
                 SimpleHats.logger.log(org.apache.logging.log4j.Level.ERROR,
@@ -106,7 +113,8 @@ public class BagItem extends Item {
                 for (int i = 0; i < availableLootList.size(); i++) {
                     Item item = availableLootList.get(i);
                     int weight = (item instanceof HatItem hat) ? hat.getHatEntry().getHatWeight()
-                            : ((TailItem) item).getTailEntry().getTailWeight();
+                            : (item instanceof  TailItem tail) ? tail.getTailEntry().getTailWeight()
+                            : ((ChestItem) item).getChestEntry().getChestWeight();
                     tempListBuilder.add(ConstantIntProvider.create(i), weight);
                 }
                 availableLootWeighted = new WeightedListIntProvider(tempListBuilder.build());

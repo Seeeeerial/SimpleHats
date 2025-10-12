@@ -3,7 +3,6 @@ package fonnymunkey.simplehats.client.tail;
 import dev.emi.trinkets.api.TrinketsApi;
 import fonnymunkey.simplehats.SimpleHats;
 import fonnymunkey.simplehats.common.item.TailItem;
-import fonnymunkey.simplehats.util.TailEntry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.Perspective;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -43,6 +42,12 @@ public class TailLayer<T extends LivingEntity, M extends EntityModel<T>> extends
     private void renderTail(ItemStack itemStack, MatrixStack poseStack, VertexConsumerProvider buffer,
                             int packedLight, T livingEntity, float limbSwing, float limbSwingAmount,
                             float partialTicks, float age, float netHeadYaw, float headPitch) {
+        // "blank"라는 단어가 이름에 포함되어 있으면 렌더링 생략
+        String itemName = itemStack.getItem().getTranslationKey().toLowerCase();
+        if (itemName.contains("blank")) {
+            return;
+        }
+
         if (!livingEntity.isInvisible()) {
             poseStack.push();
 

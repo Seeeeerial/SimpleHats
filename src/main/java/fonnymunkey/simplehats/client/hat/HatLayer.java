@@ -18,6 +18,8 @@ import net.minecraft.entity.mob.ZombieVillagerEntity;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
 
 public class HatLayer<T extends LivingEntity, M extends EntityModel<T> & ModelWithHead> extends FeatureRenderer<T, M> {
@@ -41,6 +43,11 @@ public class HatLayer<T extends LivingEntity, M extends EntityModel<T> & ModelWi
 	}
 	
 	private void render(ItemStack itemStack, MatrixStack poseStack, VertexConsumerProvider buffer, int packedLight, T livingEntity, float limbSwing, float limbSwingAmount, float partialTicks, float age, float netHeadYaw, float headPitch) {
+        // 아이템 이름에 'blank' 포함 시 렌더링 생략
+        Identifier id = Registries.ITEM.getId(itemStack.getItem());
+        if (id.getPath().toLowerCase().contains("blank")) {
+            return;
+        }
 		if(!livingEntity.isInvisible()) {
 			poseStack.push();
 			
