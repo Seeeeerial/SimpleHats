@@ -79,9 +79,8 @@ public class BagItem extends Item {
         if (availableLootList.size() == 0) {
             // HatItems
             for (HatItem hat : ModRegistry.hatList) {
-                if ((hat.getHatEntry().getHatRarity() == this.rarity || this.seasonal) &&
-                        hat.getHatEntry().getHatWeight() != 0 &&
-                        hat.getHatEntry().getHatSeason() == this.hatSeason) {
+                if ((hat.getHatEntry().getHatRarity() == this.rarity) &&
+                        hat.getHatEntry().getHatWeight() != 0) {
                     availableLootList.add(hat);
                 }
             }
