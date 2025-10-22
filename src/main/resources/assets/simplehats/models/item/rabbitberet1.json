@@ -2,8 +2,8 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "simplehats:item/hats/clothR_brown",
-		"particle": "simplehats:item/hats/clothR_brown"
+		"1": "simplehats:item/hats/clothr_brown",
+		"particle": "simplehats:item/hats/clothr_brown"
 	},
 	"elements": [
 		{
