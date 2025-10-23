@@ -25,8 +25,9 @@ public class TailJson {
         new TailEntry("fox_tail", Rarity.RARE, 5, 0, new TailEntry.TailDyeSettings(true, 16383998)),
         new TailEntry("rabbit_tail", Rarity.RARE, 5, 0, new TailEntry.TailDyeSettings(true, 16383998)),
         new TailEntry("raccoon_tail", Rarity.RARE, 5, 0, new TailEntry.TailDyeSettings(true, 16383998)),
-        new TailEntry("tiger_tail", Rarity.RARE, 5, 0, new TailEntry.TailDyeSettings(true, 16383998)),
+        new TailEntry("tiger_tail", Rarity.RARE, 5, 0, new TailEntry.TailDyeSettings(true, 14974780)),
         new TailEntry("wolf_tail", Rarity.RARE, 5, 0, new TailEntry.TailDyeSettings(true, 16383998)),
+        new TailEntry("tail_demonblack", Rarity.RARE, 5, 0, new TailEntry.TailDyeSettings(true, 16383998)),
         new TailEntry("blank_pants", Rarity.RARE, 0, 0)
     );
     public static List<TailEntry> getTailList() {

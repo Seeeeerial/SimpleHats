@@ -3,6 +3,7 @@ package fonnymunkey.simplehats;
 import fonnymunkey.simplehats.common.entity.HatDisplay;
 import fonnymunkey.simplehats.common.init.*;
 import fonnymunkey.simplehats.common.item.ChestItem;
+import fonnymunkey.simplehats.common.item.ClothItem;
 import fonnymunkey.simplehats.common.item.HatItem;
 import fonnymunkey.simplehats.common.item.TailItem;
 import fonnymunkey.simplehats.common.item.etcItems.BlankShoes;
@@ -41,6 +42,7 @@ public class SimpleHats implements ModInitializer {
     public static final TagKey<Item> ALL_HATS = TagKey.of(RegistryKeys.ITEM, new Identifier(modId, "all_hats"));
     public static final TagKey<Item> ALL_TAILS = TagKey.of(RegistryKeys.ITEM, new Identifier(modId, "all_tails"));
     public static final TagKey<Item> ALL_CHESTS = TagKey.of(RegistryKeys.ITEM, new Identifier(modId, "all_chests"));
+    public static final TagKey<Item> ALL_CLOTHS = TagKey.of(RegistryKeys.ITEM, new Identifier(modId, "all_cloths"));
 
     public static final Item BLANK_SHOES = new BlankShoes(new Item.Settings().maxCount(1));
 
@@ -50,6 +52,7 @@ public class SimpleHats implements ModInitializer {
         HatJson.registerHatJson();
         TailJson.registerTailJson();
         ChestJson.registerChestJson();
+        ClothJson.registerClothJson();
 
         /*
         if(SimpleHats.config.common.allowUpdates) {
@@ -59,7 +62,8 @@ public class SimpleHats implements ModInitializer {
 
         ModRegistry.registerHats();
         ModRegistry.registerTails();
-        ModRegistry.registerCHests();
+        ModRegistry.registerChests();
+        ModRegistry.registerCloths();
 
         Registry.register(Registries.ITEM, new Identifier(modId, "blank_shoes"), BLANK_SHOES);
 
@@ -93,6 +97,9 @@ public class SimpleHats implements ModInitializer {
                     }
                     for(ChestItem chest : ModRegistry.chestList) {
                         entries.add(chest);
+                    }
+                    for(ClothItem cloth : ModRegistry.clothList) {
+                        entries.add(cloth);
                     }
                     entries.add(BLANK_SHOES);
                 })

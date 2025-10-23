@@ -1,7 +1,7 @@
 package fonnymunkey.simplehats.mixin.core;
 
 import dev.emi.trinkets.api.TrinketsApi;
-import fonnymunkey.simplehats.common.item.ChestItem;
+import fonnymunkey.simplehats.common.item.ClothItem;
 import fonnymunkey.simplehats.common.item.HatItem;
 import fonnymunkey.simplehats.common.item.TailItem;
 import fonnymunkey.simplehats.common.item.etcItems.BlankShoes;
@@ -31,7 +31,7 @@ public class MixinHumanoidArmorLayer {
 
         else if (entity instanceof PlayerEntity && armorSlot.equals(EquipmentSlot.CHEST)) {
             TrinketsApi.getTrinketComponent(entity).ifPresent(component -> {
-                var hasBeltTrinket = !component.getEquipped(stack -> stack.getItem() instanceof ChestItem).isEmpty();
+                var hasBeltTrinket = !component.getEquipped(stack -> stack.getItem() instanceof ClothItem).isEmpty();
                 if (hasBeltTrinket) ci.cancel(); // 바지 렌더링 취소
             });
         }

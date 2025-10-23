@@ -3,15 +3,9 @@ package fonnymunkey.simplehats.common.init;
 import fonnymunkey.simplehats.SimpleHats;
 import fonnymunkey.simplehats.common.entity.HatDisplay;
 import fonnymunkey.simplehats.common.item.*;
-import fonnymunkey.simplehats.common.recipe.ChestScrapRecipe;
-import fonnymunkey.simplehats.common.recipe.HatScrapRecipe;
-import fonnymunkey.simplehats.common.recipe.HatVariantRecipe;
-import fonnymunkey.simplehats.common.recipe.TailScrapRecipe;
-import fonnymunkey.simplehats.util.ChestEntry;
-import fonnymunkey.simplehats.util.HatEntry;
+import fonnymunkey.simplehats.common.recipe.*;
+import fonnymunkey.simplehats.util.*;
 import fonnymunkey.simplehats.util.HatEntry.HatSeason;
-import fonnymunkey.simplehats.util.TagInjector;
-import fonnymunkey.simplehats.util.TailEntry;
 import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -34,6 +28,7 @@ public class ModRegistry {
     public static List<HatItem> hatList = new ArrayList<HatItem>();
     public static List<TailItem> tailList = new ArrayList<TailItem>();
     public static List<ChestItem> chestList = new ArrayList<ChestItem>();
+    public static List<ClothItem> clothList = new ArrayList<ClothItem>();
 
     ////
     //Items
@@ -83,7 +78,7 @@ public class ModRegistry {
         TagInjector.inject(Registries.ITEM, SimpleHats.ALL_TAILS.id(), ModRegistry.tailList.stream().map(tailItem -> (Item) tailItem).toList());
     }
 
-    public static void registerCHests() {
+    public static void registerChests() {
         for(ChestEntry entry : ChestJson.getChestList()) {
             ChestItem chest = entry.getChestDyeSettings().getUseDye() ? new ChestItemDyeable(entry) : new ChestItem(entry);
             chest = Registry.register(Registries.ITEM, new Identifier(SimpleHats.modId, entry.getChestName()), chest);
@@ -91,9 +86,22 @@ public class ModRegistry {
 
             if(chest instanceof ChestItemDyeable) CauldronBehavior.WATER_CAULDRON_BEHAVIOR.map().put((ChestItemDyeable)chest, CauldronBehavior.CLEAN_DYEABLE_ITEM);
         }
-        SimpleHats.logger.log(Level.INFO, "Generated " + ModRegistry.tailList.size() + " tail items from tail entries.");
+        SimpleHats.logger.log(Level.INFO, "Generated " + ModRegistry.chestList.size() + " chest items from chest entries.");
 
         TagInjector.inject(Registries.ITEM, SimpleHats.ALL_CHESTS.id(), ModRegistry.chestList.stream().map(chestItem -> (Item) chestItem).toList());
+    }
+
+    public static void registerCloths() {
+        for(ClothEntry entry : ClothJson.getClothList()) {
+            ClothItem cloth = entry.getClothDyeSettings().getUseDye() ? new ClothItemDyeable(entry) : new ClothItem(entry);
+            cloth = Registry.register(Registries.ITEM, new Identifier(SimpleHats.modId, entry.getClothName()), cloth);
+            ModRegistry.clothList.add(cloth);
+
+            if(cloth instanceof ClothItemDyeable) CauldronBehavior.WATER_CAULDRON_BEHAVIOR.map().put((ClothItemDyeable)cloth, CauldronBehavior.CLEAN_DYEABLE_ITEM);
+        }
+        SimpleHats.logger.log(Level.INFO, "Generated " + ModRegistry.clothList.size() + " cloth items from cloth entries.");
+
+        TagInjector.inject(Registries.ITEM, SimpleHats.ALL_CLOTHS.id(), ModRegistry.clothList.stream().map(clothItem -> (Item) clothItem).toList());
     }
 
     ////
@@ -115,6 +123,12 @@ public class ModRegistry {
                     Registries.RECIPE_SERIALIZER,
                     new Identifier(SimpleHats.modId, "custom_chestscraps"),
                     new SpecialRecipeSerializer<>(ChestScrapRecipe::new)
+            );
+    public static final RecipeSerializer<?> CLOTHSCRAP_SERIALIZER =
+            Registry.register(
+                    Registries.RECIPE_SERIALIZER,
+                    new Identifier(SimpleHats.modId, "custom_clothscraps"),
+                    new SpecialRecipeSerializer<>(ClothScrapRecipe::new)
             );
     public static final RecipeSerializer<?> HATVARIANTS_SERIALIZER = Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(SimpleHats.modId, "custom_hatvariants"), new SpecialRecipeSerializer<>(HatVariantRecipe::new));
 

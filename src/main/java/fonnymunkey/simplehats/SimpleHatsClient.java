@@ -3,12 +3,14 @@ package fonnymunkey.simplehats;
 import dev.emi.trinkets.api.client.TrinketRenderer;
 import dev.emi.trinkets.api.client.TrinketRendererRegistry;
 import fonnymunkey.simplehats.client.chest.ChestLayer;
+import fonnymunkey.simplehats.client.cloth.ClothLayer;
 import fonnymunkey.simplehats.client.hat.HatLayer;
 import fonnymunkey.simplehats.client.hatdisplay.HatDisplayModel;
 import fonnymunkey.simplehats.client.hatdisplay.HatDisplayRenderer;
 import fonnymunkey.simplehats.client.tail.TailLayer;
 import fonnymunkey.simplehats.common.init.ModRegistry;
 import fonnymunkey.simplehats.common.item.ChestItemDyeable;
+import fonnymunkey.simplehats.common.item.ClothItemDyeable;
 import fonnymunkey.simplehats.common.item.HatItemDyeable;
 import fonnymunkey.simplehats.common.item.TailItemDyeable;
 import fonnymunkey.simplehats.common.item.etcItems.BlankShoesRenderer;
@@ -53,6 +55,14 @@ public class SimpleHatsClient implements ClientModInitializer {
                 TrinketRendererRegistry.registerRenderer(chest, renderer);
             }
         }
+        for(Item cloth : ModRegistry.clothList) {
+            if(cloth instanceof ClothItemDyeable clothDye) {
+                ColorProviderRegistry.ITEM.register((stack, color) -> ((ClothItemDyeable)stack.getItem()).getColor(stack), clothDye);
+            }
+            if(cloth instanceof TrinketRenderer renderer) {
+                TrinketRendererRegistry.registerRenderer(cloth, renderer);
+            }
+        }
         TrinketRendererRegistry.registerRenderer((Item)ModRegistry.HATSPECIAL, (TrinketRenderer)ModRegistry.HATSPECIAL);
         TrinketRendererRegistry.registerRenderer(BLANK_SHOES, new BlankShoesRenderer());
         /*
@@ -69,6 +79,7 @@ public class SimpleHatsClient implements ClientModInitializer {
                 registrationHelper.register(new HatLayer<>(playerEntityRenderer));
                 registrationHelper.register(new TailLayer<>(playerEntityRenderer));
                 registrationHelper.register(new ChestLayer<>(playerEntityRenderer));
+                registrationHelper.register(new ClothLayer<>(playerEntityRenderer));
             }
         });
     }

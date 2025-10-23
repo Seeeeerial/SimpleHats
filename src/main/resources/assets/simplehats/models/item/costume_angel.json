@@ -2,122 +2,9 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "block/MizunoArchive/sea_lantern1",
 		"2": "simplehats:item/chest/wings_angel"
 	},
 	"elements": [
-		{
-			"name": "octagon",
-			"from": [10.18041, 19.5, 6.07805],
-			"to": [11.34041, 20.5, 9.92195],
-			"rotation": {"angle": -22.5, "axis": "y", "origin": [6.70041, 20, 8]},
-			"faces": {
-				"north": {"uv": [5.16, 7, 4, 8], "texture": "#1", "tintindex": 0},
-				"east": {"uv": [6.8439, 3, 3, 4], "texture": "#1", "tintindex": 0},
-				"south": {"uv": [6.16, 4, 5, 5], "texture": "#1", "tintindex": 0},
-				"west": {"uv": [7.8439, 4, 4, 5], "texture": "#1", "tintindex": 0},
-				"up": {"uv": [7, 7.16, 10.8439, 6], "rotation": 270, "texture": "#1", "tintindex": 0},
-				"down": {"uv": [6, 7.16, 9.8439, 6], "rotation": 90, "texture": "#1", "tintindex": 0}
-			}
-		},
-		{
-			"name": "octagon",
-			"from": [10.18041, 19.5, 6.07805],
-			"to": [11.34041, 20.5, 9.92195],
-			"rotation": {"angle": 22.5, "axis": "y", "origin": [6.70041, 20, 8]},
-			"faces": {
-				"north": {"uv": [5.16, 7, 4, 8], "texture": "#1", "tintindex": 0},
-				"east": {"uv": [6.8439, 3, 3, 4], "texture": "#1", "tintindex": 0},
-				"south": {"uv": [6.16, 4, 5, 5], "texture": "#1", "tintindex": 0},
-				"west": {"uv": [7.8439, 4, 4, 5], "texture": "#1", "tintindex": 0},
-				"up": {"uv": [7, 7.16, 10.8439, 6], "rotation": 270, "texture": "#1", "tintindex": 0},
-				"down": {"uv": [6, 7.16, 9.8439, 6], "rotation": 90, "texture": "#1", "tintindex": 0}
-			}
-		},
-		{
-			"name": "octagon",
-			"from": [2.06041, 19.5, 6.07805],
-			"to": [3.22041, 20.5, 9.92195],
-			"rotation": {"angle": -22.5, "axis": "y", "origin": [6.70041, 20, 8]},
-			"faces": {
-				"north": {"uv": [5.16, 7, 4, 8], "texture": "#1", "tintindex": 0},
-				"east": {"uv": [6.8439, 3, 3, 4], "texture": "#1", "tintindex": 0},
-				"south": {"uv": [6.16, 4, 5, 5], "texture": "#1", "tintindex": 0},
-				"west": {"uv": [7.8439, 4, 4, 5], "texture": "#1", "tintindex": 0},
-				"up": {"uv": [7, 7.16, 10.8439, 6], "rotation": 270, "texture": "#1", "tintindex": 0},
-				"down": {"uv": [6, 7.16, 9.8439, 6], "rotation": 90, "texture": "#1", "tintindex": 0}
-			}
-		},
-		{
-			"name": "octagon",
-			"from": [2.06041, 19.5, 6.07805],
-			"to": [3.22041, 20.5, 9.92195],
-			"rotation": {"angle": 22.5, "axis": "y", "origin": [6.70041, 20, 8]},
-			"faces": {
-				"north": {"uv": [5.16, 7, 4, 8], "texture": "#1", "tintindex": 0},
-				"east": {"uv": [6.8439, 3, 3, 4], "texture": "#1", "tintindex": 0},
-				"south": {"uv": [6.16, 4, 5, 5], "texture": "#1", "tintindex": 0},
-				"west": {"uv": [7.8439, 4, 4, 5], "texture": "#1", "tintindex": 0},
-				"up": {"uv": [7, 7.16, 10.8439, 6], "rotation": 270, "texture": "#1", "tintindex": 0},
-				"down": {"uv": [6, 7.16, 9.8439, 6], "rotation": 90, "texture": "#1", "tintindex": 0}
-			}
-		},
-		{
-			"name": "octagon",
-			"from": [4.77846, 19.5, 11.48],
-			"to": [8.62236, 20.5, 12.64],
-			"rotation": {"angle": -22.5, "axis": "y", "origin": [6.70041, 20, 8]},
-			"faces": {
-				"north": {"uv": [7.8439, 7, 4, 8], "texture": "#1", "tintindex": 0},
-				"east": {"uv": [4.16, 3, 3, 4], "texture": "#1", "tintindex": 0},
-				"south": {"uv": [8.8439, 4, 5, 5], "texture": "#1", "tintindex": 0},
-				"west": {"uv": [5.16, 4, 4, 5], "texture": "#1", "tintindex": 0},
-				"up": {"uv": [7, 9.8439, 8.16, 6], "rotation": 270, "texture": "#1", "tintindex": 0},
-				"down": {"uv": [6, 9.8439, 7.16, 6], "rotation": 90, "texture": "#1", "tintindex": 0}
-			}
-		},
-		{
-			"name": "octagon",
-			"from": [4.77846, 19.5, 11.48],
-			"to": [8.62236, 20.5, 12.64],
-			"rotation": {"angle": 22.5, "axis": "y", "origin": [6.70041, 20, 8]},
-			"faces": {
-				"north": {"uv": [7.8439, 7, 4, 8], "texture": "#1", "tintindex": 0},
-				"east": {"uv": [4.16, 3, 3, 4], "texture": "#1", "tintindex": 0},
-				"south": {"uv": [8.8439, 4, 5, 5], "texture": "#1", "tintindex": 0},
-				"west": {"uv": [5.16, 4, 4, 5], "texture": "#1", "tintindex": 0},
-				"up": {"uv": [7, 9.8439, 8.16, 6], "rotation": 270, "texture": "#1", "tintindex": 0},
-				"down": {"uv": [6, 9.8439, 7.16, 6], "rotation": 90, "texture": "#1", "tintindex": 0}
-			}
-		},
-		{
-			"name": "octagon",
-			"from": [4.77846, 19.5, 3.36],
-			"to": [8.62236, 20.5, 4.52],
-			"rotation": {"angle": -22.5, "axis": "y", "origin": [6.70041, 20, 8]},
-			"faces": {
-				"north": {"uv": [7.8439, 7, 4, 8], "texture": "#1", "tintindex": 0},
-				"east": {"uv": [4.16, 3, 3, 4], "texture": "#1", "tintindex": 0},
-				"south": {"uv": [8.8439, 4, 5, 5], "texture": "#1", "tintindex": 0},
-				"west": {"uv": [5.16, 4, 4, 5], "texture": "#1", "tintindex": 0},
-				"up": {"uv": [7, 9.8439, 8.16, 6], "rotation": 270, "texture": "#1", "tintindex": 0},
-				"down": {"uv": [6, 9.8439, 7.16, 6], "rotation": 90, "texture": "#1", "tintindex": 0}
-			}
-		},
-		{
-			"name": "octagon",
-			"from": [4.77846, 19.5, 3.36],
-			"to": [8.62236, 20.5, 4.52],
-			"rotation": {"angle": 22.5, "axis": "y", "origin": [6.70041, 20, 8]},
-			"faces": {
-				"north": {"uv": [7.8439, 7, 4, 8], "texture": "#1", "tintindex": 0},
-				"east": {"uv": [4.16, 3, 3, 4], "texture": "#1", "tintindex": 0},
-				"south": {"uv": [8.8439, 4, 5, 5], "texture": "#1", "tintindex": 0},
-				"west": {"uv": [5.16, 4, 4, 5], "texture": "#1", "tintindex": 0},
-				"up": {"uv": [7, 9.8439, 8.16, 6], "rotation": 270, "texture": "#1", "tintindex": 0},
-				"down": {"uv": [6, 9.8439, 7.16, 6], "rotation": 90, "texture": "#1", "tintindex": 0}
-			}
-		},
 		{
 			"from": [3.93975, 8.37689, 12.13099],
 			"to": [4.93975, 9.30077, 13.7483],
@@ -473,22 +360,16 @@
 	},
 	"groups": [
 		{
-			"name": "Halo",
-			"origin": [8, 8, 8],
+			"name": "Wing Branch",
+			"origin": [-5.86543, 13.44316, 11.56066],
 			"color": 0,
-			"children": [0, 1, 2, 3, 4, 5, 6, 7]
+			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 		},
 		{
 			"name": "Wing Branch",
 			"origin": [-5.86543, 13.44316, 11.56066],
 			"color": 0,
-			"children": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-		},
-		{
-			"name": "Wing Branch",
-			"origin": [-5.86543, 13.44316, 11.56066],
-			"color": 0,
-			"children": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+			"children": [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
 		}
 	]
 }
