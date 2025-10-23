@@ -75,7 +75,7 @@ public class HatJson {
             new HatEntry("bearears", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
             new HatEntry("catears", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
             new HatEntry("rabbit_ear", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
-            new HatEntry("tiger_ears", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
+            new HatEntry("tiger_ears", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 14974780)),
             new HatEntry("wolf_ear", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
             new HatEntry("angel_ring", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16777160)),
             new HatEntry("ushanka", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
@@ -97,6 +97,9 @@ public class HatJson {
             new HatEntry("fallen_angel_halo", Rarity.RARE, 5, 0),
             new HatEntry("fire_hat", Rarity.RARE, 5, 0),
             new HatEntry("wind_hat", Rarity.RARE, 5, 0),
+            new HatEntry("white_robe_hood", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
+            new HatEntry("black_robe_hood", Rarity.RARE, 5, 0),
+            new HatEntry("leather_hood", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
             new HatEntry("pinkhat", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998))
 
 //            new HatEntry("bandana", Rarity.UNCOMMON, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),

@@ -134,7 +134,7 @@ public class ChestLayer<T extends LivingEntity, M extends EntityModel<T>> extend
         if (isFallenWing) {
             baseZ += 0.45F;
         }
-
+        boolean isCostumeWing =  itemStack.getItem().getTranslationKey().toLowerCase().contains("costume");
         // === 이동 및 회전 ===
         poseStack.translate(0.0F, baseY, baseZ);
         poseStack.multiply(RotationAxis.POSITIVE_X.rotationDegrees(rotationPitch));
@@ -151,7 +151,13 @@ public class ChestLayer<T extends LivingEntity, M extends EntityModel<T>> extend
         // === 스케일 ===
         if (isFallenWing) {
             poseStack.scale(5.0F, -5.0F, -5.0F);
-        } else {
+        }
+        else if(isCostumeWing) {
+            poseStack.scale(2.0F, -2.0F, -2.0F);
+            // 회전 적용 (x, y, z 축 중 하나를 기준으로 90도 회전)
+            poseStack.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90)); // Y축 기준 90도 회전
+        }
+        else {
             poseStack.scale(4.0F, -4.0F, -4.0F);
         }
     }

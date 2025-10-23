@@ -54,23 +54,23 @@ public class BagItem extends Item {
 
         if (!level.isClient()) {
             // Seasonal bag chance
-            if (!this.seasonal && HatSeason.getSeason() != HatSeason.NONE) {
-                if (level.getRandom().nextFloat() * 100.0F < SimpleHats.config.common.seasonalBagChance) {
-                    player.dropItem(getSeasonalBag());
-                }
-            }
+//            if (!this.seasonal && HatSeason.getSeason() != HatSeason.NONE) {
+//                if (level.getRandom().nextFloat() * 100.0F < SimpleHats.config.common.seasonalBagChance) {
+//                    player.dropItem(getSeasonalBag());
+//                }
+//            }
             player.dropItem(this.getBagResult(level));
         }
         return TypedActionResult.success(itemStack, level.isClient());
     }
 
     private static Item getSeasonalBag() {
-        switch (HatSeason.getSeason()) {
-            case EASTER -> { return ModRegistry.HATBAG_EASTER; }
-            case SUMMER -> { return ModRegistry.HATBAG_SUMMER; }
-            case HALLOWEEN -> { return ModRegistry.HATBAG_HALLOWEEN; }
-            case FESTIVE -> { return ModRegistry.HATBAG_FESTIVE; }
-        }
+//        switch (HatSeason.getSeason()) {
+//            case EASTER -> { return ModRegistry.HATBAG_EASTER; }
+//            case SUMMER -> { return ModRegistry.HATBAG_SUMMER; }
+//            case HALLOWEEN -> { return ModRegistry.HATBAG_HALLOWEEN; }
+//            case FESTIVE -> { return ModRegistry.HATBAG_FESTIVE; }
+//        }
         SimpleHats.logger.log(org.apache.logging.log4j.Level.ERROR, "Failed to get seasonal bag type.");
         return Items.AIR;
     }
@@ -99,6 +99,14 @@ public class BagItem extends Item {
                 }
             }
 
+            // ClothItems
+            for (ClothItem cloth : ModRegistry.clothList) {
+                if (cloth.getClothEntry().getClothRarity() == this.rarity &&
+                        cloth.getClothEntry().getClothWeight() != 0) {
+                    availableLootList.add(cloth);
+                }
+            }
+
             if (availableLootList.size() == 0) {
                 SimpleHats.logger.log(org.apache.logging.log4j.Level.ERROR,
                         "Failed to populate " + this.getName() + " loot list.");
@@ -113,7 +121,8 @@ public class BagItem extends Item {
                     Item item = availableLootList.get(i);
                     int weight = (item instanceof HatItem hat) ? hat.getHatEntry().getHatWeight()
                             : (item instanceof  TailItem tail) ? tail.getTailEntry().getTailWeight()
-                            : ((ChestItem) item).getChestEntry().getChestWeight();
+                            : (item instanceof  ChestItem chest) ? chest.getChestEntry().getChestWeight()
+                            : ((ClothItem) item).getClothEntry().getClothWeight();
                     tempListBuilder.add(ConstantIntProvider.create(i), weight);
                 }
                 availableLootWeighted = new WeightedListIntProvider(tempListBuilder.build());

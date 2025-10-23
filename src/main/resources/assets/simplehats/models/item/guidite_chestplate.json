@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "simplehats:item/cloth/netherite_chest_icon"
-  }
-}
