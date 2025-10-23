@@ -22,7 +22,7 @@ public class ChestJson {
     private static final List<ChestEntry> defaultChests = Arrays.asList(
             new ChestEntry("fallen_angel_wings", Rarity.RARE, 5, 0, new ChestEntry.ChestParticleSettings(true, "minecraft:ash", 0.04F, ChestEntry.ChestParticleSettings.ChestParticleMovement.TRAILING_FULL)),
             new ChestEntry("wind_wings", Rarity.RARE, 5, 0, new ChestEntry.ChestParticleSettings(true, "minecraft:glow", 0.03F, ChestEntry.ChestParticleSettings.ChestParticleMovement.TRAILING_FULL)),
-            new ChestEntry("fire_wings", Rarity.RARE, 5, 0, new ChestEntry.ChestParticleSettings(true, "minecraft:flame", 0.04F, ChestEntry.ChestParticleSettings.ChestParticleMovement.TRAILING_FULL)),
+            new ChestEntry("fire_wings", Rarity.RARE, 5, 0, new ChestEntry.ChestParticleSettings(true, "minecraft:crimson_spore", 0.04F, ChestEntry.ChestParticleSettings.ChestParticleMovement.TRAILING_FULL)),
             new ChestEntry("wind_wings_dyeable", Rarity.RARE, 5, 0, new ChestEntry.ChestDyeSettings(true, 16383998), new ChestEntry.ChestParticleSettings(true, "minecraft:end_rod", 0.03F, ChestEntry.ChestParticleSettings.ChestParticleMovement.TRAILING_FULL)),
             new ChestEntry("fire_wings_dyeable", Rarity.RARE, 5, 0, new ChestEntry.ChestDyeSettings(true, 16383998), new ChestEntry.ChestParticleSettings(true, "minecraft:white_ash", 0.05F, ChestEntry.ChestParticleSettings.ChestParticleMovement.TRAILING_FULL)),
             new ChestEntry("costume_demonblack", Rarity.RARE, 5, 0, new ChestEntry.ChestDyeSettings(true, 3355443), new ChestEntry.ChestParticleSettings(true, "minecraft:ash", 0.04F, ChestEntry.ChestParticleSettings.ChestParticleMovement.TRAILING_CHEST)),
