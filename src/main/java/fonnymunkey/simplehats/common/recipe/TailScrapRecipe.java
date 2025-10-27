@@ -67,8 +67,10 @@ public class TailScrapRecipe extends SpecialCraftingRecipe {
             ItemStack stack = craftingInventory.getStack(i);
             if (!stack.isEmpty()) {
                 if (stack.getItem() instanceof TailItem) {
-                    tailIndex = i;
-
+                    String itemName = stack.getItem().getTranslationKey().toLowerCase();
+                    if (!itemName.contains("blank")) {
+                        tailIndex = i;
+                    }
                 }
                 else if (stack.getItem() instanceof ShearsItem) shearsIndex = i;
             }

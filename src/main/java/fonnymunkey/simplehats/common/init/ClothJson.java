@@ -40,6 +40,9 @@ public class ClothJson {
             new ClothEntry("muffler2", Rarity.RARE, 5, 0, new ClothEntry.ClothDyeSettings(true, 16383998)),
             new ClothEntry("muffler_color", Rarity.RARE, 5, 0),
             new ClothEntry("cow", Rarity.RARE, 5, 0),
+            new ClothEntry("frill_bikini", Rarity.RARE, 5, 0, new ClothEntry.ClothDyeSettings(true, 16383998)),
+            new ClothEntry("jamal", Rarity.RARE, 5, 0),
+            new ClothEntry("bunnygirl", Rarity.RARE, 5, 0),
             new ClothEntry("blank_top", Rarity.RARE, 0, 0)
     );
     public static List<ClothEntry> getClothList() {

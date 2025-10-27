@@ -41,6 +41,7 @@ public class HatJson {
             new HatEntry("snowmanbaby", Rarity.RARE, 5, 0, new HatEntry.HatParticleSettings(true, "minecraft:snowflake", 0.04F, HatEntry.HatParticleSettings.HatParticleMovement.TRAILING_HEAD)),
             new HatEntry("stress", Rarity.RARE, 5, 0, new HatEntry.HatParticleSettings(true, "minecraft:warped_spore", 0.02F, HatEntry.HatParticleSettings.HatParticleMovement.TRAILING_HEAD)),
             new HatEntry("sunglasses", Rarity.RARE, 5, 0),
+            new HatEntry("glasses", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
             new HatEntry("winghat", Rarity.RARE, 5, 0, new HatEntry.HatParticleSettings(true, "minecraft:cloud", 0.03F, HatEntry.HatParticleSettings.HatParticleMovement.TRAILING_HEAD)),
             new HatEntry("zigzagwitchhat", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998), new HatEntry.HatParticleSettings(true, "minecraft:witch", 0.04F, HatEntry.HatParticleSettings.HatParticleMovement.TRAILING_FULL)),
             new HatEntry("smallroundmimi", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),

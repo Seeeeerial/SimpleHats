@@ -75,7 +75,12 @@ public class HatScrapRecipe extends SpecialCraftingRecipe {
             ItemStack slot = craftingInventory.getStack(i);
             if(!slot.isEmpty()) {
                 totalItems++;
-                if(slot.getItem() instanceof HatItem hat && hat!=ModRegistry.HATSPECIAL) list[0] = i;
+                if(slot.getItem() instanceof HatItem hat && hat!=ModRegistry.HATSPECIAL) {
+                    String itemName = slot.getItem().getTranslationKey().toLowerCase();
+                    if (!itemName.contains("blank")) {
+                        list[0] = i;
+                    }
+                }
                 if(slot.getItem() instanceof ShearsItem) list[1] = i;
             }
         }

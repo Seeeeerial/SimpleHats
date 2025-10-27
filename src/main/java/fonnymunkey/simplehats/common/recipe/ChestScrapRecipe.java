@@ -67,8 +67,10 @@ public class ChestScrapRecipe extends SpecialCraftingRecipe {
             ItemStack stack = craftingInventory.getStack(i);
             if (!stack.isEmpty()) {
                 if (stack.getItem() instanceof ChestItem) {
-                    chestIndex = i;
-
+                    String itemName = stack.getItem().getTranslationKey().toLowerCase();
+                    if (!itemName.contains("blank")) {
+                        chestIndex = i;
+                    }
                 }
                 else if (stack.getItem() instanceof ShearsItem) shearsIndex = i;
             }

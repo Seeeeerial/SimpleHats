@@ -67,8 +67,10 @@ public class ClothScrapRecipe extends SpecialCraftingRecipe {
             ItemStack stack = craftingInventory.getStack(i);
             if (!stack.isEmpty()) {
                 if (stack.getItem() instanceof ClothItem) {
-                    clothIndex = i;
-
+                    String itemName = stack.getItem().getTranslationKey().toLowerCase();
+                    if (!itemName.contains("blank")) {
+                        clothIndex = i;
+                    }
                 }
                 else if (stack.getItem() instanceof ShearsItem) shearsIndex = i;
             }
