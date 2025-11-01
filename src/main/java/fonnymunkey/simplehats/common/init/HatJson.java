@@ -101,6 +101,7 @@ public class HatJson {
             new HatEntry("white_robe_hood", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
             new HatEntry("black_robe_hood", Rarity.RARE, 5, 0),
             new HatEntry("leather_hood", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
+            new HatEntry("flushing", Rarity.RARE, 5, 0),
             new HatEntry("pinkhat", Rarity.RARE, 5, 0, new HatEntry.HatDyeSettings(true, 16383998))
 
 //            new HatEntry("bandana", Rarity.UNCOMMON, 5, 0, new HatEntry.HatDyeSettings(true, 16383998)),
